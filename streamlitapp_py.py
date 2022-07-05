@@ -14,12 +14,9 @@ import numpy as np
 
 model = load_model('Light_GBM')
 
-def predict_quality(model, df):
-    
-    predictions_data = predict_model(estimator = model, data = df)
-    
+def predict(model, input_df):
+    predictions_df = predict_model(estimator=model, data=input_df)
     predictions = predictions_df['Label'][0]
-    
     return predictions
 
 st.title('Prediciting Vehicle Insurance in Customers Web App')
@@ -50,6 +47,8 @@ Policy_Sales_Channel = st.number_input(label = 'Input your policy sales channel'
 
 Vintage = st.number_input(label = 'How long you have been a our customers (in a day)', min_value=10, max_value=299, value=30)
 
+output=""
+
 features = {'id': Identifier, 'Gender': Gender, 'Age': Age,
             'Driving_License': Driving_License, 'Region_Code': Region_Code,
             'Previously_Insured': Previously_Insured, 'Vehicle_Age': Vehicle_Age, 'Vehicle_Damage': Vehicle_Damage,
@@ -59,8 +58,8 @@ features = {'id': Identifier, 'Gender': Gender, 'Age': Age,
 
 features_df  = pd.DataFrame([features])
 
-if st.button('Predict'):
-    
-    prediction = predict_quality(model, features_df)
-    
-    st.write('Based on feature values, you are'+ (prediction))
+if st.button("Predict"):
+    output = predict(model=model, input_df=input_df)
+    output = '$' + str(output)
+
+st.success('The output is {}'.format(output))
