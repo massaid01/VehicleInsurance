@@ -62,7 +62,4 @@ st.table(features_df)
 if st.button('Predict'):
     prediction = predict(estimator = model, data = features_df)
     st.write('Based on feature values, your'+ str(prediction))
-    
-    
-if __name__ == '__main__':
-    run()
+   
