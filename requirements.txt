@@ -1,4 +1,4 @@
-pycaret
+pycaret --user
 streamlit
 pandas
 numpy
