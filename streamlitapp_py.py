@@ -25,6 +25,8 @@ st.write('This is a web app to predicting whether existing customers interested 
          value of each feature. After that, click on the Predict button at the bottom to\
          see the prediction.')
 
+Identifier = st.number_input('Input your ID number', min_value=1, max_value=381109, value=20)
+
 Gender = st.selectbox('Gender', ['Female', 'Male'])
 
 Age = st.number_input('Input your age', min_value=24, max_value=85, value=35)
@@ -32,6 +34,8 @@ Age = st.number_input('Input your age', min_value=24, max_value=85, value=35)
 Driving_License = st.selectbox('Do you have a driving license?', [0, 1])
 
 Region_Code = st.number_input('Input your region code', min_value=1, max_value=51, value=10)
+
+Previously_Insured = st.selectbox('Do you have a previously insured?', [0, 1])
 
 Vehicle_Age = st.selectbox('Input your vehicle age', ['> 2 Years', '1-2 Year', '< 1 Year'])
 
@@ -43,10 +47,10 @@ Policy_Sales_Channel = st.number_input('Input your policy sales channel', min_va
 
 Vintage = st.number_input('How long you have been a our customers (in a day)', min_value=10, max_value=299, value=30)
 
-features = {'Gender': Gender, 'Age': Age,
+features = {'id': Identifier, 'Gender': Gender, 'Age': Age,
             'Driving_License': Driving_License, 'Region_Code': Region_Code,
-            'Vehicle_Age': Vehicle_Age, 'Vehicle_Damage': Vehicle_Damage,
-            'Annual_Premium ':Annual_Premium, 'Policy_Sales_Channel': Policy_Sales_Channel,
+            'Previously_Insured': Previously_Insured, 'Vehicle_Age': Vehicle_Age, 'Vehicle_Damage': Vehicle_Damage,
+            'Annual_Premium ': Annual_Premium, 'Policy_Sales_Channel': Policy_Sales_Channel,
             'Vintage': Vintage
             }
 
