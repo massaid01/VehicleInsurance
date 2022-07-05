@@ -30,19 +30,19 @@ st.write('This is a web app to predicting whether existing customers interested 
 
 Identifier = st.number_input(label ='Input your ID number', min_value=1, max_value=381109, value=20)
 
-Gender = st.selectbox(label = 'Gender', ['Female', 'Male'])
+Gender = st.selectbox('Gender', ['Female', 'Male'])
 
 Age = st.number_input(label = 'Input your age', min_value=24, max_value=85, value=35)
 
-Driving_License = st.selectbox(label = 'Do you have a driving license?', [0, 1])
+Driving_License = st.selectbox('Do you have a driving license?', [0, 1])
 
 Region_Code = st.number_input(label = 'Input your region code', min_value=1.0, max_value=51.0, value=10.0)
 
-Previously_Insured = st.selectbox(label = 'Do you have a previously insured?', [0, 1])
+Previously_Insured = st.selectbox('Do you have a previously insured?', [0, 1])
 
-Vehicle_Age = st.selectbox(label = 'Input your vehicle age', ['> 2 Years', '1-2 Year', '< 1 Year'])
+Vehicle_Age = st.selectbox('Input your vehicle age', ['> 2 Years', '1-2 Year', '< 1 Year'])
 
-Vehicle_Damage = st.selectbox(label = 'Do you have vehicle damage', ['No', 'Yes'])
+Vehicle_Damage = st.selectbox('Do you have vehicle damage', ['No', 'Yes'])
 
 Annual_Premium = st.number_input(label = 'Input your annual premium', min_value=2630.0, max_value=540165.0, value=30000.0)
 
