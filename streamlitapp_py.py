@@ -15,8 +15,11 @@ import numpy as np
 model = load_model('Light_GBM')
 
 def predict_quality(model, df):
+    
     predictions_data = predict_model(estimator = model, data = df)
+    
     predictions = predictions_df['Label'][0]
+    
     return predictions
 
 st.title('Prediciting Vehicle Insurance in Customers Web App')
@@ -25,27 +28,27 @@ st.write('This is a web app to predicting whether existing customers interested 
          value of each feature. After that, click on the Predict button at the bottom to\
          see the prediction.')
 
-Identifier = st.number_input('Input your ID number', min_value=1, max_value=381109, value=20)
+Identifier = st.number_input(label ='Input your ID number', min_value=1, max_value=381109, value=20)
 
-Gender = st.selectbox('Gender', ['Female', 'Male'])
+Gender = st.selectbox(label = 'Gender', ['Female', 'Male'])
 
-Age = st.number_input('Input your age', min_value=24, max_value=85, value=35)
+Age = st.number_input(label = 'Input your age', min_value=24, max_value=85, value=35)
 
-Driving_License = st.selectbox('Do you have a driving license?', [0, 1])
+Driving_License = st.selectbox(label = 'Do you have a driving license?', [0, 1])
 
-Region_Code = st.number_input('Input your region code', min_value=1, max_value=51, value=10)
+Region_Code = st.number_input(label = 'Input your region code', min_value=1.0, max_value=51.0, value=10.0)
 
-Previously_Insured = st.selectbox('Do you have a previously insured?', [0, 1])
+Previously_Insured = st.selectbox(label = 'Do you have a previously insured?', [0, 1])
 
-Vehicle_Age = st.selectbox('Input your vehicle age', ['> 2 Years', '1-2 Year', '< 1 Year'])
+Vehicle_Age = st.selectbox(label = 'Input your vehicle age', ['> 2 Years', '1-2 Year', '< 1 Year'])
 
-Vehicle_Damage = st.selectbox('Do you have vehicle damage', ('No', 'Yes'))
+Vehicle_Damage = st.selectbox(label = 'Do you have vehicle damage', ['No', 'Yes'])
 
-Annual_Premium = st.number_input('Input your annual premium', min_value=2630, max_value=540165, value=30000)
+Annual_Premium = st.number_input(label = 'Input your annual premium', min_value=2630.0, max_value=540165.0, value=30000.0)
 
-Policy_Sales_Channel = st.number_input('Input your policy sales channel', min_value=1, max_value=163, value=30)
+Policy_Sales_Channel = st.number_input(label = 'Input your policy sales channel', min_value=1.0, max_value=163.0, value=30.0)
 
-Vintage = st.number_input('How long you have been a our customers (in a day)', min_value=10, max_value=299, value=30)
+Vintage = st.number_input(label = 'How long you have been a our customers (in a day)', min_value=10, max_value=299, value=30)
 
 features = {'id': Identifier, 'Gender': Gender, 'Age': Age,
             'Driving_License': Driving_License, 'Region_Code': Region_Code,
@@ -57,5 +60,7 @@ features = {'id': Identifier, 'Gender': Gender, 'Age': Age,
 features_df  = pd.DataFrame([features])
 
 if st.button('Predict'):
+    
     prediction = predict_quality(model, features_df)
+    
     st.write('Based on feature values, you are'+ (prediction))
