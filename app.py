@@ -25,7 +25,7 @@ st.write('This is a web app to predicting whether existing customers interested 
          value of each feature. After that, click on the Predict button at the bottom to\
          see the prediction.')
 
-Gender = st.sidebar.selectbox('Gender', ['Female', 'Male'])
+Gender = st.sidebar.selectbox('Gender', ('Female', 'Male'))
 
 Age = st.sidebar.number_input('Input your age', min_value=24, max_value=85, value=35)
 
@@ -38,9 +38,9 @@ Driving_License = st.sidebar.selectbox("Do you have a driving license?", options
 
 Region_Code = st.sidebar.number_input('Input your region code', min_value=1, max_value=51, value=10)
 
-Vehicle_Age = st.sidebar.selectbox('Input your vehicle age', ['> 2 Years', '1-2 Year', '< 1 Year'])
+Vehicle_Age = st.sidebar.selectbox('Input your vehicle age', ('> 2 Years', '1-2 Year', '< 1 Year'))
 
-Vehicle_Damage = st.sidebar.selectbox('Do you have vehicle damage', ['No', 'Yes'])
+Vehicle_Damage = st.sidebar.selectbox('Do you have vehicle damage', ('No', 'Yes'))
 
 Annual_Premium = st.sidebar.number_input('Input your annual premium', min_value=2630, max_value=540165, value=30000)
 
@@ -61,5 +61,5 @@ st.table(features_df)
 
 if st.button('Predict'):
     prediction = predict(model, features_df)
-    st.write('Based on feature values, your'+ str(prediction))
+    st.write(prediction)
    
