@@ -12,12 +12,11 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-model = load_model('Light_GBM')
-
 def predict_quality(model, df):
     predictions_data = predict_model(estimator = model, data = df)
-    predictions = predictions_df['Label'][0]
-    return predictions
+    return predictions_data['Label'][0]
+
+model = load_model('Light_GBM')
 
 st.title('Prediciting Vehicle Insurance in Customers Web App')
 st.write('This is a web app to predicting whether existing customers interested or not based on\
@@ -61,4 +60,4 @@ st.table(features_df)
 
 if st.button('Predict'):
     prediction = predict_quality(model, features_df)
-    st.write(' Based on feature values, your'+ str(prediction))
+    st.write('Based on feature values, your'+ str(prediction))
