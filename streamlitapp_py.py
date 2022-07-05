@@ -59,7 +59,7 @@ features = {'id': Identifier, 'Gender': Gender, 'Age': Age,
 features_df  = pd.DataFrame([features])
 
 if st.button("Predict"):
-    output = predict(model=model, input_df=input_df)
+    output = predict(model=model, input_df=features_df)
     output = '$' + str(output)
 
 st.success('The output is {}'.format(output))
