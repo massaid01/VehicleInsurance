@@ -12,9 +12,10 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-def predict_quality(model, df):
-    predictions_data = predict_model(estimator = model, data = df)
-    return predictions_data['Label'][0]
+def predict(model, input_df):
+    predictions_df = predict_model(estimator=model, data=input_df)
+    predictions = predictions_df['Label'][0]
+    return predictions
 
 model = load_model('Light_GBM')
 
@@ -59,5 +60,9 @@ features_df  = pd.DataFrame([features])
 st.table(features_df)
 
 if st.button('Predict'):
-    prediction = predict_quality(model, features_df)
+    prediction = predict(estimator = model, data = features_df)
     st.write('Based on feature values, your'+ str(prediction))
+    
+    
+if __name__ == '__main__':
+    run()
