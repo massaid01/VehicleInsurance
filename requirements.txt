@@ -2,5 +2,3 @@ pycaret
 streamlit
 pandas
 numpy
-markupsafe==2.0.1
-jinja2
