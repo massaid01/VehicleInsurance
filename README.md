@@ -1,8 +1,5 @@
 # Welcome to Predicting Vehicle Insurance
-This is my first end to end data science project which incorporates data anaysis, machine learning models and web app deployment.
-The deployed web has a calculator to predict whether people interesting in vehicle insurance or not.
-
-You can try the web app here: https://share.streamlit.io/
+In this project, I predict the data with some classification machine learning models.  
 
 # Background
 This dataset contains existing customers in insurance company in last year. 
