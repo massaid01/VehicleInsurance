@@ -1,4 +1,4 @@
-# Welcome to Predicting Vehicle Insurance
+# Welcome to Prediction of Interest in Vehicle Insurance
 In this project, I predict the data with some classification machine learning models.  
 
 # Background
