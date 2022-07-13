@@ -55,5 +55,5 @@ features = {'Gender': Gender, 'Age': Age,
 features_df  = pd.DataFrame([features])
 
 if st.button('Predict'):
-    prediction = predict_quality(model, features_df)
-    st.write('Based on feature values, you are' + (prediction))
+    output = predict_quality(model, features_df)
+    output = str(output)
