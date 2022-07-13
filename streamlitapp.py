@@ -37,7 +37,7 @@ Previously_Insured = st.selectbox('Do you have a previously insured?', [0, 1])
 
 Vehicle_Age = st.selectbox('Input your vehicle age', ['> 2 Years', '1-2 Year', '< 1 Year'])
 
-Vehicle_Damage = st.selectbox('Do you have vehicle damage', ('No', 'Yes'))
+Vehicle_Damage = st.selectbox('Do you have vehicle damage', ['No', 'Yes'])
 
 Annual_Premium = st.number_input('Input your annual premium', min_value=2630.0, max_value=540165.0, value=30000.0)
 
