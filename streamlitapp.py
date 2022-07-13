@@ -57,3 +57,5 @@ features_df  = pd.DataFrame([features])
 if st.button('Predict'):
     output = predict_quality(model, features_df)
     output = str(output)
+    
+st.success('The output is {}'.format(output))
