@@ -16,7 +16,7 @@ model = load_model('LGBM')
 
 def predict_quality(model, df):
     predictions_data = predict_model(estimator = model, data = df)
-    predictions = predictions_df['Label'][0]
+    predictions = predictions_data['Label'][0]
     return predictions
 
 st.title('Prediciting Vehicle Insurance in Customers Web App')
