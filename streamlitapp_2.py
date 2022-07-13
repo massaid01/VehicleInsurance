@@ -41,7 +41,7 @@ Region_Code = st.number_input('Input your region code', min_value=1.0, max_value
 insured = {0: "No", 1: "Yes"}
 
 def format_func(option):
-    return drive[option]
+    return insured[option]
 
 Previously_Insured= st.selectbox("Do you have a previously insured?", options=list(insured.keys()), format_func=format_func)
 
@@ -66,4 +66,8 @@ features_df  = pd.DataFrame([features])
 
 if st.button('Predict'):
     prediction = predict_quality(model, features_df)
-    st.write('Based on feature values, you are' + (prediction))
+
+    if prediction = 0:
+        st.write('Sounds like youre not interested yet in vehicle insurance')
+    elif prediction = 1:
+        st.write('Sounds like youre interested yet in vehicle insurance. You can call our AM to more details information on 0822-2773-3392')
