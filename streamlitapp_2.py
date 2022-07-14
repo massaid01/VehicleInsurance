@@ -66,8 +66,11 @@ features_df  = pd.DataFrame([features])
 
 if st.button('Predict'):
     prediction = predict_quality(model, features_df)
+         
+    if prediction == 0:
+        pred = 'Rejected'
+    else:
+        pred = 'Approved'
+    return pred
 
-    if prediction = 0:
-        st.write('Sounds like youre not interested yet in vehicle insurance')
-    elif prediction = 1:
-        st.write('Sounds like youre interested yet in vehicle insurance. You can call our AM to more details information on 0822-2773-3392')
+st.write('Sounds like youre {} yet in vehicle insurance. You can call our AM to more details information on 0822-2773-3392'.format(prediction))
