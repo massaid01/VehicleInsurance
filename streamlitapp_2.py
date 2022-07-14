@@ -68,9 +68,9 @@ if st.button('Predict'):
     prediction = predict_quality(model, features_df)
          
     if prediction == 0:
-        pred = 'Rejected'
+        pred = 'Loss'
     else:
-        pred = 'Approved'
+        pred = 'Interested'
     return pred
 
-st.write('Sounds like youre {} yet in vehicle insurance. You can call our AM to more details information on 0822-2773-3392'.format(prediction))
+st.write('Sounds like youre {} in vehicle insurance'.format(prediction))
