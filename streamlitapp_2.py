@@ -71,6 +71,5 @@ if st.button('Predict'):
         pred = 'Loss'
     else:
         pred = 'Interested'
-    return pred
-
-st.write('Sounds like youre {} in vehicle insurance'.format(prediction))
+    
+st.write('Sounds like youre {} in vehicle insurance'.format(pred))
