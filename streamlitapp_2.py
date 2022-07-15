@@ -29,29 +29,19 @@ Gender = st.selectbox('Gender', ['Female', 'Male'])
 
 Age = st.number_input('Input your age', min_value=24, max_value=85, value=35)
 
-drive = {0: "No", 1: "Yes"}
+Driving_License  = st.selectbox('Do you have a driving license?', ['No', 'Yes'])
 
-def format_func(option):
-    return drive[option]
+Region_Code = st.number_input('Input your region code', min_value=1, max_value=51, value=10)
 
-Driving_License = st.selectbox("Do you have a driving license?", options=list(drive.keys()), format_func=format_func)
-
-Region_Code = st.number_input('Input your region code', min_value=1.0, max_value=51.0, value=10.0)
-
-insured = {0: "No", 1: "Yes"}
-
-def format_func(option):
-    return insured[option]
-
-Previously_Insured= st.selectbox("Do you have a previously insured?", options=list(insured.keys()), format_func=format_func)
+Previously_Insured = st.selectbox('Do you have a previously insured?', ['No', 'Yes'])
 
 Vehicle_Age = st.selectbox('Input your vehicle age', ['> 2 Years', '1-2 Year', '< 1 Year'])
 
 Vehicle_Damage = st.selectbox('Do you have vehicle damage', ['No', 'Yes'])
 
-Annual_Premium = st.number_input('Input your annual premium', min_value=2630.0, max_value=540165.0, value=30000.0)
+Annual_Premium = st.number_input('Input your annual premium', min_value=2630, max_value=540165, value=30000)
 
-Policy_Sales_Channel = st.number_input('Input your policy sales channel', min_value=1.0, max_value=163.0, value=30.0)
+Policy_Sales_Channel = st.number_input('Input your policy sales channel', min_value=1, max_value=163, value=30)
 
 Vintage = st.number_input('How long you have been a our customers (in a day)', min_value=10, max_value=299, value=30)
 
@@ -67,9 +57,6 @@ features_df  = pd.DataFrame([features])
 if st.button('Predict'):
     prediction = predict_quality(model, features_df)
          
-    if prediction == 0:
-        st.write('Sounds like youre not interested in vehicle insurance')
-    else:
-        st.write('Sounds like youre interested in vehicle insurance')
-    
+st.write('Sounds like you re {} in vehicle insurance'.format(prediction))
+       
 
