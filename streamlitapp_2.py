@@ -68,8 +68,8 @@ if st.button('Predict'):
     prediction = predict_quality(model, features_df)
          
     if prediction == 0:
-        pred = 'Loss'
+        st.write('Sounds like youre not interested in vehicle insurance')
     else:
-        pred = 'Interested'
+        st.write('Sounds like youre interested in vehicle insurance')
     
-st.write('Sounds like youre {} in vehicle insurance'.format(prediction))
+
