@@ -1,5 +1,6 @@
 # Welcome to Prediction of Interest in Vehicle Insurance
-In this project, I predict the data with some classification machine learning models.  
+This project is predicting the data with some classification machine learning models. This is my final project on study at dibimbing.id bootcamp. 
+I also deploy it on streamlit, you can access here : https://massaid01-vehicleinsurance-streamlitapp-2-cyiwm0.streamlitapp.com/
 
 # Background
 This dataset contains existing customers in insurance company in last year. 
