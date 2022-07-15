@@ -16,7 +16,7 @@ model = load_model('NEWLGBM')
 
 def predict_quality(model, df):
     predictions_data = predict_model(estimator = model, data = df)
-    predictions = predictions_df['Label'][0]
+    predictions = predictions_data['Label'][0]
     return predictions
 
 st.title('Prediciting Vehicle Insurance in Customers Web App')
@@ -55,8 +55,8 @@ features = {'Gender': Gender, 'Age': Age,
 features_df  = pd.DataFrame([features])
 
 if st.button('Predict'):
-    prediction = predict_quality(model, features_df)
+    predictions = predict_quality(model, features_df)
          
-st.write('Sounds like you re' + (prediction))
+st.write(predictions)
        
 
