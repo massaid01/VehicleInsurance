@@ -57,6 +57,6 @@ features_df  = pd.DataFrame([features])
 if st.button('Predict'):
     prediction = predict_quality(model, features_df)
          
-st.write('Sounds like you re' (prediction) 'in vehicle insurance')
+st.write('Sounds like you re' (prediction))
        
 
