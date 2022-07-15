@@ -21,7 +21,7 @@ def predict_quality(model, df):
 
 def run():
     
-    st.title('Prediciting Interest in Vehicle Insurance in Customers Web App')
+    st.title('Prediciting Vehicle Insurance Interest in Customers Web App')
     st.write('This is a web app to predicting whether existing customers interested or not based on\
              several features bellow. Please adjust the value of each feature. After that, click on\
              the Predict button at the bottom to see the prediction.')
