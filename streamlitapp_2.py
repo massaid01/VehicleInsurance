@@ -59,7 +59,7 @@ def run():
         predictions = predict_quality(model, features_df)
         predictions = str(predictions)
     
-        st.success('The output is {}'.format(predictions))
+        st.success('It is looks like you {} in vehicle insurance'.format(predictions))
        
 if __name__ == '__main__':
     run()
