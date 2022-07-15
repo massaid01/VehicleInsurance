@@ -12,7 +12,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-model = load_model('LGBM')
+model = load_model('NEWLGBM')
 
 def predict_quality(model, df):
     predictions_data = predict_model(estimator = model, data = df)
